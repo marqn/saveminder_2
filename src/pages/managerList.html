@@ -1,0 +1,25 @@
+<div layout="column" layout-align="center center"
+>
+    <h3>List of words</h3>
+
+    <md-list flex="100">
+        <md-list-item ng-repeat="topping in toppings" layout="row">
+
+            <div flex>
+                <h5> {{ topping.first }} </h5>
+                <h5> {{ topping.second }} </h5>
+            </div>
+
+            <div flex>
+                {{topping.category }}
+            </div>
+
+            <div flex>
+                <md-button class="md-icon-button" aria-label="More">
+                    <md-icon md-svg-icon="img/more_vert.svg"></md-icon>
+                </md-button>
+            </div>
+
+        </md-list-item>
+    </md-list>
+</div>

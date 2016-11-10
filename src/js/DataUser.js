@@ -11,6 +11,6 @@ var userData = {
     age: 0,
 
 
-    language: 'pl',
+    language: 'pl'
 
 };
