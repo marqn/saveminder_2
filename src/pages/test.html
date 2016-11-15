@@ -1,0 +1,24 @@
+<md-list>
+    <md-subheader class="md-no-sticky"><h2>Category: normal</h2></md-subheader>
+    <md-divider></md-divider>
+
+    <md-list-item class="md-2-line" ng-repeat="item in todos">
+
+
+        <div class="md-list-item-text">1</div>
+
+        <div class="md-list-item-text">
+            <h3>{{item.title}}</h3>
+
+            <h3>{{item.description}}</h3>
+        </div>
+
+        <div class="md-list-item-inner">
+            <md-button class="md-raised">EDIT</md-button>
+            <md-button><h1>:</h1></md-button>
+        </div>
+
+        <md-divider></md-divider>
+
+    </md-list-item>
+</md-list>

@@ -16,6 +16,10 @@ app.config(function ($routeProvider) {
             controller: 'listCtrl',
             templateUrl: 'pages/managerList.html'
         })
+        .when('/test', {
+            controller: 'testCtrl',
+            templateUrl: 'pages/test.html'
+        })
         .otherwise({
             template: '<h1>Not Found</h1>'
         });
@@ -37,11 +41,11 @@ app.controller('managerCtrl', function ($scope, $mdDialog) {
         // Appending dialog to document.body to cover sidenav in docs app
         var confirm = $mdDialog.prompt()
             .title('Create new category')
-            .placeholder('category name')
+            .placeholder('.....')
             .initialValue('')
             .targetEvent(ev)
-            .ok('Create')
-            .cancel('Cancel');
+            .cancel('Cancel')
+            .ok('Create');
 
         $mdDialog.show(confirm).then(function (result) {
             $scope.status = 'You decided to name your dog ' + result + '.';
@@ -91,4 +95,21 @@ app.controller('listCtrl', function ($scope) {
             elapsedTime: '00:34'
         },
     ];
-})
+});
+
+app.controller('testCtrl', function ($scope) {
+    $scope.todos = [
+        {
+            title: 'shameless',
+            description: 'bezwstydny'
+        },
+        {
+            title: 'shameless',
+            description: 'bezwstydny'
+        },
+        {
+            title: 'shameless',
+            description: 'bezwstydny'
+        }
+    ]
+});
