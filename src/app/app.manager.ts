@@ -6,55 +6,5 @@ import {Component} from "@angular/core";
 })
 
 export class AppManager {
-  words = [
-    {
-      first: 'lala',
-      second: 'okoko'
-    }, {
-      first: 'lala',
-      second: 'okoko'
-    }, {
-      first: 'lala',
-      second: 'okoko'
-    }, {
-      first: 'lala',
-      second: 'okoko'
-    }, {
-      first: 'lala',
-      second: 'okoko'
-    }, {
-      first: 'lala',
-      second: 'okoko'
-    },{
-      first: 'lala',
-      second: 'okoko'
-    },{
-      first: 'lala',
-      second: 'okoko'
-    },{
-      first: 'lala',
-      second: 'okoko'
-    },{
-      first: 'lala',
-      second: 'okoko'
-    },{
-      first: 'lala',
-      second: 'okoko'
-    },{
-      first: 'lala',
-      second: 'okoko'
-    },{
-      first: 'lala',
-      second: 'okoko'
-    },{
-      first: 'lala',
-      second: 'okoko'
-    },{
-      first: 'lala',
-      second: 'okoko'
-    },{
-      first: 'lala',
-      second: 'okoko'
-    },
-  ]
+  
 }

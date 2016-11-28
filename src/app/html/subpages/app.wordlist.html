@@ -1,0 +1,28 @@
+<ul materialize="collapsible" class="collapsible" data-collapsible="accordion">
+  <li *ngFor="let word of words">
+    <div class="collapsible-header">
+      <div class="row center-align">
+        <div class="col s6">
+          <span (click)="clciked()">First Line</span>
+          <br>
+          <span (click)="clciked()">Second Line</span>
+        </div>
+        <div class="col s3">
+          Remember time:0:34<br>
+          Elapsed time:00:12:02
+        </div>
+        <div class="col s3">
+          Date added:26-06-2016<br>
+          Refresh: 34
+        </div>
+      </div>
+
+    </div>
+    <div class="collapsible-body center-align">
+      <p>
+        <a class="waves-effect waves-light green btn">Edit</a>
+        <a class="waves-effect waves-light red btn">Delete</a>
+      </p>
+    </div>
+  </li>
+</ul>

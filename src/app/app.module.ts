@@ -3,6 +3,8 @@ import {NgModule} from "@angular/core";
 import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 import {RouterModule} from "@angular/router";
+import {MaterializeModule} from "angular2-materialize";
+
 import {AppComponent} from "./app.component";
 import {AppNavigation} from "./app.navigation";
 import {AppContainer} from "./app.container";
@@ -10,7 +12,8 @@ import {AppFooter} from "./app.footer";
 import {AppLearn} from "./app.learn";
 import {AppManager} from "./app.manager";
 import {AppGame} from "./app.game";
-import {MaterializeModule} from "angular2-materialize";
+import {Wordlist} from "./app.wordlist";
+import {WordComponent} from "./app.word.component";
 
 const appRoutes = [
   {
@@ -24,6 +27,14 @@ const appRoutes = [
   {
     path: '#/game',
     component: AppGame
+  },
+  {
+    path: '#/wordlist',
+    component: Wordlist
+  },
+  {
+    path: '#/edit',
+    component: WordComponent
   }
 ];
 
@@ -36,7 +47,9 @@ const appRoutes = [
     AppFooter,
     AppLearn,
     AppManager,
-    AppGame
+    AppGame,
+    Wordlist,
+    WordComponent
   ],
   imports: [
     BrowserModule,
