@@ -5,15 +5,15 @@ import {HttpModule} from "@angular/http";
 import {RouterModule} from "@angular/router";
 import {MaterializeModule} from "angular2-materialize";
 
-import {AppComponent} from "./app.component";
-import {AppNavigation} from "./app.navigation";
-import {AppContainer} from "./app.container";
-import {AppFooter} from "./app.footer";
-import {AppLearn} from "./app.learn";
-import {AppManager} from "./app.manager";
-import {AppGame} from "./app.game";
-import {Wordlist} from "./app.wordlist";
-import {WordComponent} from "./app.word.component";
+import {AppMain} from "./html/app.main.ts";
+import {AppNavigation} from "./html/app.navigation.ts";
+import {AppContainer} from "./html/app.container.ts";
+import {AppFooter} from "./html/app.footer.ts";
+import {AppLearn} from "./html/subpages/app.learn.ts";
+import {AppManager} from "./html/subpages/app.manager.ts";
+import {AppGame} from "./html/subpages/app.game.ts";
+import {Wordlist} from "./html/subpages/app.wordlist.ts";
+import {WordComponent} from "./html/subpages/app.word.component.ts";
 
 const appRoutes = [
   {
@@ -41,7 +41,7 @@ const appRoutes = [
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppMain,
     AppNavigation,
     AppContainer,
     AppFooter,
@@ -59,7 +59,7 @@ const appRoutes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppMain]
 })
 export class AppModule {
 }
