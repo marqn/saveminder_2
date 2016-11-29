@@ -59,6 +59,7 @@ export class Wordlist {
   ]
 
   clciked(event) {
-    console.log('click');
+    console.log(event.srcElement.firstChild);
+    event.preventDefault();
   }
 }

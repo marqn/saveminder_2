@@ -1,28 +1,53 @@
-<ul materialize="collapsible" class="collapsible" data-collapsible="accordion">
-  <li *ngFor="let word of words">
-    <div class="collapsible-header">
-      <div class="row center-align">
-        <div class="col s6">
-          <span (click)="clciked()">First Line</span>
-          <br>
-          <span (click)="clciked()">Second Line</span>
-        </div>
-        <div class="col s3">
-          Remember time:0:34<br>
-          Elapsed time:00:12:02
-        </div>
-        <div class="col s3">
-          Date added:26-06-2016<br>
-          Refresh: 34
-        </div>
-      </div>
+<div class="row">
 
-    </div>
-    <div class="collapsible-body center-align">
-      <p>
-        <a class="waves-effect waves-light green btn">Edit</a>
-        <a class="waves-effect waves-light red btn">Delete</a>
-      </p>
-    </div>
-  </li>
-</ul>
+  <div class="section center">
+    <h5>Sort by:</h5>
+    <!-- Dropdown Trigger -->
+    <a materialize="dropdown" class='dropdown-button btn' data-activates='dropdown2'>
+      Category
+      <i class="material-icons right">arrow_drop_down</i>
+    </a>
+
+    <a class="btn" (click)="clciked($event)">
+      <i class="material-icons small valign">swap_vert</i>
+    </a>
+
+    <!-- Dropdown Structure -->
+    <ul id='dropdown2' class='dropdown-content'>
+      <li><a class="center">Number of refresh</a></li>
+      <li><a class="center">Elapsed time</a></li>
+      <li><a class="center">Date added</a></li>
+      <li><a class="center">Remember time</a></li>
+    </ul>
+  </div>
+
+
+  <ul materialize="collapsible" class="collapsible" data-collapsible="accordion">
+    <li *ngFor="let word of words">
+      <div class="collapsible-header">
+        <div class="row center-align">
+          <div class="col s6">
+            <span (click)="clciked($event)">First Line</span>
+            <br>
+            <span (click)="clciked($event)">Second Line</span>
+          </div>
+          <div class="col s3">
+            Remember time:0:34<br>
+            Elapsed time:00:12:02
+          </div>
+          <div class="col s3">
+            Date added:26-06-2016<br>
+            Refresh: 34
+          </div>
+        </div>
+
+      </div>
+      <div class="collapsible-body center-align">
+        <p>
+          <a class="waves-effect waves-light green btn">Edit</a>
+          <a class="waves-effect waves-light red btn">Delete</a>
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
