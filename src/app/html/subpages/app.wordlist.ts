@@ -2,7 +2,7 @@ import {Component} from "@angular/core";
 
 @Component({
   selector: 'wordlist',
-  templateUrl: './html/subpages/app.wordlist.html'
+  templateUrl: './app.wordlist.html'
 })
 
 export class Wordlist {
