@@ -14,8 +14,18 @@ import {AppManager} from "./html/subpages/app.manager.ts";
 import {AppGame} from "./html/subpages/app.game.ts";
 import {Wordlist} from "./html/subpages/app.wordlist.ts";
 import {WordComponent} from "./html/subpages/app.word.component.ts";
+import {Startpage} from "./html/subpages/app.startpage";
+import {Loginpage} from "./html/subpages/app.loginpage";
 
 const appRoutes = [
+  {
+    path: '#/startpage',
+    component: Startpage
+  },
+  {
+    path: '#/loginpage',
+    component: Loginpage
+  },
   {
     path: '#/learn',
     component: AppLearn
@@ -41,6 +51,8 @@ const appRoutes = [
 
 @NgModule({
   declarations: [
+    Startpage,
+    Loginpage,
     AppMain,
     AppNavigation,
     AppContainer,
