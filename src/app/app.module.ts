@@ -15,7 +15,8 @@ import {AppGame} from "./html/subpages/app.game.ts";
 import {Wordlist} from "./html/subpages/app.wordlist.ts";
 import {WordComponent} from "./html/subpages/app.word.component.ts";
 import {Startpage} from "./html/subpages/app.startpage";
-import {Loginpage} from "./html/subpages/app.loginpage";
+import {Loginpage} from "./html/subpages/login/app.loginpage.ts";
+import {Signup} from "./html/subpages/login/app.signup";
 
 const appRoutes = [
   {
@@ -25,6 +26,10 @@ const appRoutes = [
   {
     path: '#/loginpage',
     component: Loginpage
+  },
+  {
+    path: '#/signup',
+    component: Signup
   },
   {
     path: '#/learn',
@@ -53,6 +58,7 @@ const appRoutes = [
   declarations: [
     Startpage,
     Loginpage,
+    Signup,
     AppMain,
     AppNavigation,
     AppContainer,
