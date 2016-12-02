@@ -4,6 +4,7 @@ import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 import {RouterModule} from "@angular/router";
 import {MaterializeModule} from "angular2-materialize";
+import {AngularFireModule, AuthProviders, AuthMethods} from 'angularfire2';
 
 import {AppMain} from "./html/app.main.ts";
 import {AppNavigation} from "./html/app.navigation.ts";
@@ -53,6 +54,18 @@ const appRoutes = [
   }
 ];
 
+// Must export the config
+export const firebaseConfig = {
+  apiKey: 'AIzaSyBMkJ2KFyRANZuyTnGJcBQBs3Uy3sxxkxI',
+  authDomain: 'saveminder.firebaseapp.com',
+  databaseURL: 'https://saveminder.firebaseio.com/',
+  storageBucket: 'gs://saveminder.appspot.com'
+};
+
+const myFirebaseAuthConfig = {
+  provider: AuthProviders.Google,
+  method: AuthMethods.Redirect
+}
 
 @NgModule({
   declarations: [
@@ -74,7 +87,8 @@ const appRoutes = [
     FormsModule,
     HttpModule,
     MaterializeModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
   ],
   providers: [],
   bootstrap: [AppMain]
