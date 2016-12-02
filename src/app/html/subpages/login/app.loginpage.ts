@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {AngularFire, FirebaseListObservable} from 'angularfire2';
+import {Component} from "@angular/core";
+import {AngularFire} from "angularfire2";
 
 @Component({
   selector: 'loginpage',
@@ -12,8 +12,6 @@ export class Loginpage {
   login() {
     this.af.auth.login();
   }
+
   
-  logout() {
-    this.af.auth.logout();
-  }
 }
