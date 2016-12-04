@@ -21,6 +21,10 @@ import {Signup} from "./html/subpages/login/app.signup";
 
 const appRoutes = [
   {
+    path: '',
+    component: Startpage
+  },
+  {
     path: '#/startpage',
     component: Startpage
   },

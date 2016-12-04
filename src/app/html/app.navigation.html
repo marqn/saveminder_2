@@ -37,13 +37,13 @@
         </a>
       </li>
       <li>
-        <a routerLink="#/loginpage">Login</a>
+        <a [hidden]="isLogged" routerLink="#/loginpage">Login</a>
       </li>
       <li>
-        <a routerLink="#/signup">Sign up</a>
+        <a [hidden]="isLogged" routerLink="#/signup">Sign up</a>
       </li>
       <li>
-        <a [hidden]="isLogged" (click)="logout()">Logout</a>
+        <a [hidden]="!isLogged" (click)="logout()">Logout</a>
       </li>
     </ul>
   </div>
