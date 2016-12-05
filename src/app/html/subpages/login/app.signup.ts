@@ -8,22 +8,19 @@ import {AngularFire} from "angularfire2/angularfire2";
 
 export class Signup {
 
-  public email;
+  public app_email;
   public pass;
   public pass2;
+  public checkbox;
 
-  constructor(private af:AngularFire) {
-
-  }
+  constructor(private af:AngularFire) {}
 
   createNewUser()
   {
-    let credentials;
-    credentials.email = this.email;
-    credentials.password = this.pass;
-
+    console.log(this.checkbox);
+    
     if(this.pass == this.pass2) {
-      this.af.auth.createUser(credentials);
+      this.af.auth.createUser({email: this.app_email, password: this.pass});
       console.log('save new user');
     }
   }

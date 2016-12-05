@@ -68,8 +68,8 @@ export const firebaseConfig = {
 
 const myFirebaseAuthConfig = {
   provider: AuthProviders.Google,
-  method: AuthMethods.Redirect
-}
+  method: AuthMethods.Popup
+};
 
 @NgModule({
   declarations: [
@@ -97,5 +97,6 @@ const myFirebaseAuthConfig = {
   providers: [],
   bootstrap: [AppMain]
 })
+
 export class AppModule {
 }

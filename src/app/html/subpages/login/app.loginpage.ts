@@ -9,25 +9,16 @@ import {AngularFire, AuthProviders, AuthMethods } from "angularfire2";
 export class Loginpage {
   constructor(public af:AngularFire) {}
 
-  public email;
-  public pass;
+  public user_email:string;
+  public user_password:string;
+  public reset_email:string;
 
-  onKey(event:any) { // without type info
-    this.email = event.target.value;
-  }
-  onKeyPass(event:any) { // without type info
-    this.pass = event.target.value;
-  }
-
-
-  login(event) {
-
-    console.log( this.email);
+  login() {
 
     this.af.auth.login(
       {
-        email: this.email,
-        password: this.pass
+        email: this.user_email,
+        password: this.user_password
       },
       {
         provider: AuthProviders.Password,
@@ -42,11 +33,17 @@ export class Loginpage {
         provider: AuthProviders.Facebook,
         method: AuthMethods.Redirect,
       }
-    )
+    );
   }
 
   fbGoogle() {
-    this.af.auth.login()
+    this.af.auth.login();
+  }
+
+  resetEmail() {
+    // this.af.auth.getAuth().auth.
+    // this.af.auth.getAuth().sendPasswordResetEmail(this.reset_email);
+
   }
 
 }

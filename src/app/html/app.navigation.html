@@ -42,6 +42,9 @@
       <li>
         <a [hidden]="isLogged" routerLink="#/signup">Sign up</a>
       </li>
+      <li [hidden]="!isLogged">
+        {{username}}
+      </li>
       <li>
         <a [hidden]="!isLogged" (click)="logout()">Logout</a>
       </li>

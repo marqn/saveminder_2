@@ -31,34 +31,34 @@
 
     <div class="row">
       <div class="input-field col s12">
-        <input id="user-email" name="user-email" type="email">
+        <input id="user-email" [(ngModel)]="app_email" type="email">
         <label for="user-email">Your email address</label>
       </div>
     </div>
 
     <div class="row">
       <div class="input-field col s12">
-        <input id="user-password" name="user-password" type="password">
+        <input id="user-password" [(ngModel)] = 'pass' type="password">
         <label for="user-password">Your password</label>
       </div>
     </div>
 
     <div class="row">
       <div class="input-field col s12">
-        <input id="user-password2" name="user-password2" type="password">
+        <input id="user-password2" [(ngModel)]="pass2"  type="password">
         <label for="user-password2">Repeat password</label>
       </div>
     </div>
 
     <div class="row center">
       <p>
-        <input type="checkbox" id="terms"/>
+        <input [(ngModel)]="checkbox" type="checkbox" id="terms"/>
         <label for="terms">I agree to the <a href="#">terms of use</a></label>
       </p>
     </div>
 
     <div class="row center">
-      <a class="btn waves-effect green">Sign up</a>
+      <a (click)="createNewUser()" class="btn waves-effect green">Sign up</a>
     </div>
 
   </div>
