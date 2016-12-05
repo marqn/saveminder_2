@@ -19,7 +19,7 @@ export class Signup {
   {
     console.log(this.checkbox);
     
-    if(this.pass == this.pass2) {
+    if(this.pass == this.pass2 && this.checkbox == true) {
       this.af.auth.createUser({email: this.app_email, password: this.pass});
       console.log('save new user');
     }
