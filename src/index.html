@@ -13,5 +13,18 @@
 </head>
 <body>
   <app-root>Loading...</app-root>
+
+  <script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBMkJ2KFyRANZuyTnGJcBQBs3Uy3sxxkxI",
+      authDomain: "saveminder.firebaseapp.com",
+      databaseURL: "https://saveminder.firebaseio.com",
+      storageBucket: "saveminder.appspot.com",
+      messagingSenderId: "533013322971"
+    };
+    firebase.initializeApp(config);
+  </script>
 </body>
 </html>

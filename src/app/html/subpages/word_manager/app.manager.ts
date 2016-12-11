@@ -1,4 +1,5 @@
 import {Component} from "@angular/core";
+import {AngularFire, FirebaseListObservable} from 'angularfire2';
 
 @Component({
   selector: 'app-manager',
@@ -6,6 +7,19 @@ import {Component} from "@angular/core";
 })
 
 export class AppManager {
+
+  constructor(af:AngularFire)
+  {
+    const cat:FirebaseListObservable<any> = af.database.list('users');
+
+    cat.subscribe(console.log);
+
+    af.auth.subscribe(
+        auth => console.log(auth.uid)
+    );// user info is inside auth object
+
+  }
+
   categories = [
     {
       name: 'Standard'
