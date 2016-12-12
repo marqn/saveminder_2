@@ -22,15 +22,6 @@ export class CategoriesDataServices {
   }
 
   getCategories() {
-
-    const cat:FirebaseListObservable<CategoryVO[]> = this.afire.database.list('users/' + this.uid + '/categories');
-
-    cat.subscribe(
-      cat => {
-        console.log(cat);
-      }
-    );
-
-    return CATEGORIES;
+    return this.afire.database.list('users/' + this.uid + '/categories');
   }
 }

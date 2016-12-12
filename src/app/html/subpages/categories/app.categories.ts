@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
 import {CategoriesDataServices} from "./CategoriesDataService";
+import {CategoryVO} from "./CategoryVO";
 
 @Component({
   selector: 'app-categories',
@@ -10,13 +11,16 @@ export class CategoriesComponent {
 
   categories;
 
-  constructor(private categoriesDataServices:CategoriesDataServices) {
-    
-  }
+  constructor(
+    private categoriesDataServices:CategoriesDataServices
+  ){}
 
   ngOnInit() {
-    console.log(this.categoriesDataServices.getCategories());
-    this.categories = this.categoriesDataServices.getCategories();
+    this.categoriesDataServices.getCategories().subscribe(
+      categories => {
+        this.categories = categories;
+      }
+    );
   }
 
 }
