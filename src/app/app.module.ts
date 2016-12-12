@@ -18,7 +18,7 @@ import {EditComponent} from "./html/subpages/app.edit.ts";
 import {Startpage} from "./html/subpages/app.startpage";
 import {Loginpage} from "./html/subpages/login/app.loginpage.ts";
 import {Signup} from "./html/subpages/login/app.signup";
-import {CategoriesDataServices} from "./html/subpages/categories/CategoriesDataService";
+import {CategoriesDataServices} from "./DataService";
 
 const appRoutes = [
   {

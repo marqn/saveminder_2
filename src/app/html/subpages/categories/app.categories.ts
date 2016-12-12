@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {CategoriesDataServices} from "./CategoriesDataService";
+import {CategoriesDataServices} from "./../../../DataService";
 import {CategoryVO} from "./CategoryVO";
 
 @Component({
@@ -9,7 +9,7 @@ import {CategoryVO} from "./CategoryVO";
 
 export class CategoriesComponent {
 
-  categories;
+  categories:CategoryVO[];
 
   constructor(
     private categoriesDataServices:CategoriesDataServices
@@ -19,6 +19,7 @@ export class CategoriesComponent {
     this.categoriesDataServices.getCategories().subscribe(
       categories => {
         this.categories = categories;
+        console.log(categories);
       }
     );
   }
