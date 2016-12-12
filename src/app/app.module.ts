@@ -7,17 +7,18 @@ import {MaterializeModule} from "angular2-materialize";
 import {AngularFireModule, AuthProviders, AuthMethods} from 'angularfire2';
 
 import {AppMain} from "./html/app.main.ts";
-import {AppNavigation} from "./html/app.navigation.ts";
+import {AppNavigation} from "./html/navigation/app.navigation.ts";
 import {AppContainer} from "./html/app.container.ts";
 import {AppFooter} from "./html/app.footer.ts";
 import {AppLearn} from "./html/subpages/learn/app.learn.ts";
-import {AppManager} from "./html/subpages/word_manager/app.manager.ts";
+import {CategoriesComponent} from "./html/subpages/categories/app.categories.ts";
 import {AppGame} from "./html/subpages/app.game.ts";
 import {Wordlist} from "./html/subpages/word_list/app.wordlist.ts";
-import {WordComponent} from "./html/subpages/app.word.component.ts";
+import {EditComponent} from "./html/subpages/app.edit.ts";
 import {Startpage} from "./html/subpages/app.startpage";
 import {Loginpage} from "./html/subpages/login/app.loginpage.ts";
 import {Signup} from "./html/subpages/login/app.signup";
+import {CategoriesDataServices} from "./html/subpages/categories/CategoriesDataService";
 
 const appRoutes = [
   {
@@ -42,7 +43,7 @@ const appRoutes = [
   },
   {
     path: '#/word-manager',
-    component: AppManager
+    component: CategoriesComponent
   },
   {
     path: '#/game',
@@ -54,7 +55,7 @@ const appRoutes = [
   },
   {
     path: '#/edit',
-    component: WordComponent
+    component: EditComponent
   }
 ];
 
@@ -81,10 +82,10 @@ const myFirebaseAuthConfig = {
     AppContainer,
     AppFooter,
     AppLearn,
-    AppManager,
+    CategoriesComponent,
     AppGame,
     Wordlist,
-    WordComponent
+    EditComponent
   ],
   imports: [
     BrowserModule,
@@ -94,7 +95,7 @@ const myFirebaseAuthConfig = {
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
   ],
-  providers: [],
+  providers: [CategoriesDataServices],
   bootstrap: [AppMain]
 })
 
