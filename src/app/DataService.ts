@@ -5,7 +5,7 @@ import {CategoryVO} from "./html/subpages/categories/CategoryVO";
 import {WordVO} from "./html/subpages/word_list/WordVO";
 
 @Injectable()
-export class CategoriesDataServices {
+export class DataServices {
 
   afire:AngularFire;
   uid:string;
@@ -16,7 +16,6 @@ export class CategoriesDataServices {
 
     af.auth.subscribe( // user info is inside auth object
       auth => {
-        console.log(auth.uid);
         this.uid = auth.uid
       }
     );
@@ -29,6 +28,6 @@ export class CategoriesDataServices {
 
   getWords(categoryKey:string) {
     return this.afire.database.list('users/' + this.uid + '/words')
-      .map( (arr) => { return arr } ) as FirebaseListObservable<WordVO[]>;
-  } 
+      .map( (arr) => { return arr } ) as FirebaseListObservable<any>;
+  }
 }

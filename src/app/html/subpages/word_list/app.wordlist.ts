@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
-import {AngularFire, FirebaseListObservable} from 'angularfire2';
+import {DataServices} from "../../../DataService";
+import {WordVO} from "./WordVO";
 
 @Component({
   selector: 'wordlist',
@@ -7,59 +8,22 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
 })
 
 export class Wordlist {
-  words = [
-    {
-      first: 'lala',
-      second: 'okoko'
-    }, {
-      first: 'lala',
-      second: 'okoko'
-    }, {
-      first: 'lala',
-      second: 'okoko'
-    }, {
-      first: 'lala',
-      second: 'okoko'
-    }, {
-      first: 'lala',
-      second: 'okoko'
-    }, {
-      first: 'lala',
-      second: 'okoko'
-    }, {
-      first: 'lala',
-      second: 'okoko'
-    }, {
-      first: 'lala',
-      second: 'okoko'
-    }, {
-      first: 'lala',
-      second: 'okoko'
-    }, {
-      first: 'lala',
-      second: 'okoko'
-    }, {
-      first: 'lala',
-      second: 'okoko'
-    }, {
-      first: 'lala',
-      second: 'okoko'
-    }, {
-      first: 'lala',
-      second: 'okoko'
-    }, {
-      first: 'lala',
-      second: 'okoko'
-    }, {
-      first: 'lala',
-      second: 'okoko'
-    }, {
-      first: 'lala',
-      second: 'okoko'
-    },
-  ]
 
-  clciked(event) {
+  words:WordVO;
+  
+  constructor(
+    public dataServices:DataServices
+  ) {}
+  
+  ngOnInit() {
+    this.dataServices.getWords('lala').subscribe(
+      words => {
+        this.words = words;
+      }
+    );
+  }
+  
+  clicked(event) {
     console.log(event.srcElement.firstChild);
     event.preventDefault();
   }

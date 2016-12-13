@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {CategoriesDataServices} from "./../../../DataService";
+import {DataServices} from "./../../../DataService";
 import {CategoryVO} from "./CategoryVO";
 
 @Component({
@@ -12,14 +12,13 @@ export class CategoriesComponent {
   categories:CategoryVO[];
 
   constructor(
-    private categoriesDataServices:CategoriesDataServices
+    private dataServices:DataServices
   ){}
 
   ngOnInit() {
-    this.categoriesDataServices.getCategories().subscribe(
+    this.dataServices.getCategories().subscribe(
       categories => {
         this.categories = categories;
-        console.log(categories);
       }
     );
   }

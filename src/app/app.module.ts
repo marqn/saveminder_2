@@ -9,19 +9,19 @@ import {AngularFireModule, AuthProviders, AuthMethods} from 'angularfire2';
 import {AppMain} from "./html/app.main.ts";
 import {AppNavigation} from "./html/navigation/app.navigation.ts";
 import {AppContainer} from "./html/app.container.ts";
-import {AppFooter} from "./html/app.footer.ts";
+import {AppFooter} from "./html/footer/app.footer.ts";
 import {AppLearn} from "./html/subpages/learn/app.learn.ts";
 import {CategoriesComponent} from "./html/subpages/categories/app.categories.ts";
-import {AppGame} from "./html/subpages/app.game.ts";
+import {AppGame} from "./html/subpages/game/app.game.ts";
 import {Wordlist} from "./html/subpages/word_list/app.wordlist.ts";
-import {EditComponent} from "./html/subpages/app.edit.ts";
-import {Startpage} from "./html/subpages/app.startpage";
+import {EditComponent} from "./html/edit/app.edit.ts";
+import {Startpage} from "./html/subpages/start/app.startpage.ts";
 import {Loginpage} from "./html/subpages/login/app.loginpage.ts";
 import {Signup} from "./html/subpages/login/app.signup";
-import {CategoriesDataServices} from "./DataService";
+import {DataServices} from "./DataService";
 
 const appRoutes = [
-  {
+  { 
     path: '',
     component: Startpage
   },
@@ -95,7 +95,7 @@ const myFirebaseAuthConfig = {
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
   ],
-  providers: [CategoriesDataServices],
+  providers: [DataServices],
   bootstrap: [AppMain]
 })
 
