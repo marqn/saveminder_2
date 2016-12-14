@@ -10,11 +10,11 @@ import {WordVO} from "./WordVO";
 export class Wordlist {
 
   words:WordVO;
-  
+
   constructor(
     public dataServices:DataServices
   ) {}
-  
+
   ngOnInit() {
     this.dataServices.getWords('lala').subscribe(
       words => {
@@ -22,9 +22,16 @@ export class Wordlist {
       }
     );
   }
-  
+
   clicked(event) {
     console.log(event.srcElement.firstChild);
     event.preventDefault();
+
+    // $('#modal1').openModal()
+  }
+
+  openModal()
+  {
+
   }
 }
