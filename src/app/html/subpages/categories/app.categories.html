@@ -1,6 +1,6 @@
 <div class="row center-align">
   <div class="col s1 left">
-    <a class="btn" [routerLink]="['../edit', {category : categoryName}]">Add new category
+    <a class="btn" [routerLink]="['../edit', {page : 'category'}]">Add new category
       <i class="material-icons right">library_add</i>
     </a>
   </div>
@@ -19,8 +19,8 @@
       </div>
       <div class="card-action">
         <a [routerLink]="['../wordlist', {category : category.categoryName}]">Select</a>
-        <a routerLink="#/edit">Edit</a>
-        <a routerLink="#/edit">
+        <a [routerLink]="['../edit', {page : 'category', categoryName : category.categoryName}]">Edit</a>
+        <a (click)="onDelete()">
           <i class="material-icons">delete</i>
         </a>
       </div>

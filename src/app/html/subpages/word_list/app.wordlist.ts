@@ -26,12 +26,6 @@ export class Wordlist {
   clicked(event) {
     console.log(event.srcElement.firstChild);
     event.preventDefault();
-
-    // $('#modal1').openModal()
   }
 
-  openModal()
-  {
-
-  }
 }

@@ -14,7 +14,7 @@ import {AppLearn} from "./html/subpages/learn/app.learn.ts";
 import {CategoriesComponent} from "./html/subpages/categories/app.categories.ts";
 import {AppGame} from "./html/subpages/game/app.game.ts";
 import {Wordlist} from "./html/subpages/word_list/app.wordlist.ts";
-import {EditComponent} from "./html/edit/app.edit.ts";
+import {EditComponent} from "./html/subpages/edit/app.edit.ts";
 import {Startpage} from "./html/subpages/start/app.startpage.ts";
 import {Loginpage} from "./html/subpages/login/app.loginpage.ts";
 import {Signup} from "./html/subpages/login/app.signup";
