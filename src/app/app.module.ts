@@ -11,14 +11,15 @@ import {AppNavigation} from "./html/navigation/app.navigation.ts";
 import {AppContainer} from "./html/app.container.ts";
 import {AppFooter} from "./html/footer/app.footer.ts";
 import {AppLearn} from "./html/subpages/learn/app.learn.ts";
-import {CategoriesComponent} from "./html/subpages/categories/app.categories.ts";
+import {CategoryListComponent} from "./html/subpages/categories/categorylist.ts";
 import {AppGame} from "./html/subpages/game/app.game.ts";
 import {Wordlist} from "./html/subpages/word_list/app.wordlist.ts";
-import {EditComponent} from "./html/subpages/edit/app.edit.ts";
+import {EditCategoryComponent} from "./html/subpages/edit/edit.category.ts";
 import {Startpage} from "./html/subpages/start/app.startpage.ts";
 import {Loginpage} from "./html/subpages/login/app.loginpage.ts";
 import {Signup} from "./html/subpages/login/app.signup";
 import {DataServices} from "./DataService";
+import {EditWordComponent} from "./html/subpages/edit/edit.word";
 
 const appRoutes = [
   { 
@@ -42,8 +43,8 @@ const appRoutes = [
     component: AppLearn
   },
   {
-    path: '#/word-manager',
-    component: CategoriesComponent
+    path: '#/category-list',
+    component: CategoryListComponent
   },
   {
     path: '#/game',
@@ -54,8 +55,12 @@ const appRoutes = [
     component: Wordlist
   },
   {
-    path: '#/edit',
-    component: EditComponent
+    path: '#/editcategory',
+    component: EditCategoryComponent
+  },
+  {
+    path: '#/editword',
+    component: EditWordComponent
   }
 ];
 
@@ -82,10 +87,11 @@ const myFirebaseAuthConfig = {
     AppContainer,
     AppFooter,
     AppLearn,
-    CategoriesComponent,
+    CategoryListComponent,
     AppGame,
     Wordlist,
-    EditComponent
+    EditCategoryComponent,
+    EditWordComponent
   ],
   imports: [
     BrowserModule,

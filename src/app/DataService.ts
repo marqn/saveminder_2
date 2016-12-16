@@ -25,7 +25,11 @@ export class DataServices {
     return this.afire.database.list('users/' + this.uid + '/categories')
       .map((arr) => {
         return arr
-      }) as FirebaseListObservable<CategoryVO[]>;
+      }) as FirebaseListObservable<any>;
+  }
+
+  getCategory(key:string) {
+
   }
 
   saveCategory(_categoryName:string) {

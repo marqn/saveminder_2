@@ -4,10 +4,10 @@ import {CategoryVO} from "./CategoryVO";
 
 @Component({
   selector: 'app-categories',
-  templateUrl: './app.categories.html'
+  templateUrl: './categorylist.html'
 })
 
-export class CategoriesComponent {
+export class CategoryListComponent {
 
   categories:CategoryVO[];
 
@@ -22,7 +22,9 @@ export class CategoriesComponent {
       }
     );
   }
-  
-  
+
+  onDelete(categoryObj) {
+    console.log(categoryObj.$key);
+  }
 
 }

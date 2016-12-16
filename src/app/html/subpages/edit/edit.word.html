@@ -1,11 +1,11 @@
 <div class="row center-align">
   <div class="col s12">
-    <h3 [hidden]="!categoryMode">Save new category:</h3>
-    <h3 [hidden]="!wordMode">Save new word:</h3>
+    <h3 [hidden]="update">Save new Word:</h3>
+    <h3 [hidden]="!update">Update word:</h3>
   </div>
 </div>
 
-<div [hidden]="categoryMode">
+<div>
   <div class="row">
     <div class="col s3"></div>
     <div class="input-field col s6">
@@ -27,14 +27,6 @@
       <input id="optional" type="text" class="validate">
       <label class="active" for="second">Optional</label>
     </div>
-  </div>
-</div>
-
-<div class="row" [hidden]="!categoryMode">
-  <div class="col s3"></div>
-  <div class="input-field col s6">
-    <input id="category" [(ngModel)]="category" type="text" class="validate">
-    <label class="active" for="second">Category</label>
   </div>
 </div>
 
