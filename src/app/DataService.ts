@@ -29,7 +29,7 @@ export class DataServices {
   }
 
   getCategory(key:string) {
-
+    return this.afire.database.object('users/' + this.uid + '/categories/' + key);
   }
 
   saveCategory(_categoryName:string) {
@@ -38,8 +38,15 @@ export class DataServices {
       .catch(err => console.log(err, 'You do not have access!'));
   }
 
-  editCategory(categoryKey:string) {
+  updateCategory(key:string, newName:string) {
+    const itemObservable = this.afire.database.object('users/' + this.uid + '/categories/' + key);
+    return itemObservable.update({ categoryName: newName });
+  }
 
+  deleteCategory(key:string) {
+    const items = this.afire.database.list('users/' + this.uid + '/categories/' + key);
+    console.log('users/' + this.uid + '/categories' + key);
+    items.remove();
   }
 
 //*********************************************** Words Operation ******************************************************

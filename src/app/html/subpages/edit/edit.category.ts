@@ -12,8 +12,8 @@ export class EditCategoryComponent {
 
   update:boolean;
   category:string;
+  keyId:string;
 
-  categoryVO;
 
   constructor(private route:ActivatedRoute,
               public dataServices:DataServices) {
@@ -21,7 +21,7 @@ export class EditCategoryComponent {
 
   ngOnInit() {
 
-    this.category = this.route.snapshot.params['obj'];
+    this.keyId = this.route.snapshot.params['id'];
 
     if (this.route.snapshot.params['mode'] == 'new') {
       this.update = false;
@@ -30,11 +30,16 @@ export class EditCategoryComponent {
       this.update = true;
     }
 
-    console.log("update:" + this.update);
+    this.dataServices.getCategory(this.keyId).subscribe(
+        categories => {
+        this.category = categories.categoryName;
+      }
+    );
+
+
   }
 
   onSave() {
-
     if (this.category != '') {
       this.dataServices.saveCategory(this.category)
         .then(_ => {
@@ -46,8 +51,12 @@ export class EditCategoryComponent {
   }
 
   onUpdate() {
-    if (this.category = '') {
-
+    if (this.category != '') {
+      this.dataServices.updateCategory(this.keyId, this.category)
+        .then(_ => {
+          console.log('update success Yeah');
+        });
+      // show toast
     }
   }
 }

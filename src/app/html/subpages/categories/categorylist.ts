@@ -1,6 +1,7 @@
 import {Component} from "@angular/core";
 import {DataServices} from "./../../../DataService";
 import {CategoryVO} from "./CategoryVO";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-categories',
@@ -12,7 +13,8 @@ export class CategoryListComponent {
   categories:CategoryVO[];
 
   constructor(
-    private dataServices:DataServices
+    private dataServices:DataServices,
+    public router:Router
   ){}
 
   ngOnInit() {
@@ -24,7 +26,7 @@ export class CategoryListComponent {
   }
 
   onDelete(categoryObj) {
-    console.log(categoryObj.$key);
+    this.dataServices.deleteCategory(categoryObj.$key);
   }
 
 }
