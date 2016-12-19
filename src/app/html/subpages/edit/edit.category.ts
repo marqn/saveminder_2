@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {DataServices} from "../../../DataService";
 import {CategoryVO} from "../categories/CategoryVO";
 
@@ -16,6 +16,7 @@ export class EditCategoryComponent {
 
 
   constructor(private route:ActivatedRoute,
+              private router:Router,
               public dataServices:DataServices) {
   }
 
@@ -44,9 +45,9 @@ export class EditCategoryComponent {
       this.dataServices.saveCategory(this.category)
         .then(_ => {
           this.category = '';
-          console.log('success Yeah');
+          this.router.navigate(['#/category-list']);
+          // show toast
         });
-      // show toast
     }
   }
 
@@ -54,9 +55,9 @@ export class EditCategoryComponent {
     if (this.category != '') {
       this.dataServices.updateCategory(this.keyId, this.category)
         .then(_ => {
-          console.log('update success Yeah');
+          this.router.navigate(['#/category-list']);
+          // show toast
         });
-      // show toast
     }
   }
 }

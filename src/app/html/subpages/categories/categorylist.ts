@@ -20,7 +20,7 @@ export class CategoryListComponent {
   ngOnInit() {
     this.dataServices.getCategories().subscribe(
       categories => {
-        this.categories = categories;
+        this.categories = categories.reverse();
       }
     );
   }
