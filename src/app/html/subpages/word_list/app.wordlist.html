@@ -1,21 +1,23 @@
 <div class="row section">
   <div class="col s3">
-    <a class="btn" [routerLink]="['../editword', {page : 'word'}]">Add new word
-      <i class="material-icons right">library_add</i>
-    </a>
+    <span>
+      <a class="btn" [routerLink]="['../editword', {id : keyId}]">Add new word
+        <i class="material-icons right">library_add</i>
+      </a>
+    </span>
   </div>
 
   <div class="section center col s6">
 
-      <h5>Sort by:</h5>
-      <!-- Dropdown Trigger -->
-      <a materialize="dropdown" class='dropdown-button btn' data-activates='dropdown2'>
-        Category
-        <i class="material-icons right">arrow_drop_down</i>
-      </a>
-      <a class="btn">
-        <i class="material-icons small valign">swap_vert</i>
-      </a>
+    <h5>Sort by:</h5>
+    <!-- Dropdown Trigger -->
+    <a materialize="dropdown" class='dropdown-button btn' data-activates='dropdown2'>
+      Category
+      <i class="material-icons right">arrow_drop_down</i>
+    </a>
+    <a class="btn">
+      <i class="material-icons small valign">swap_vert</i>
+    </a>
 
     <!-- Dropdown Structure -->
     <ul id='dropdown2' class='dropdown-content'>

@@ -18,7 +18,7 @@
         <span class="card-title">{{category.categoryName}}</span>
       </div>
       <div class="card-action">
-        <a [routerLink]="['../wordlist', {id : category.id}]">Select</a>
+        <a [routerLink]="['../wordlist', {id:category.$key}]">Select</a>
         <a [routerLink]="['../editcategory', {mode : 'update', id:category.$key }]">Edit</a>
         <a (click)="onDelete(category)">
           <i class="material-icons">delete</i>

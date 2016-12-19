@@ -1,4 +1,7 @@
 import {Component} from "@angular/core";
+import {DataServices} from "../../../DataService";
+import {WordVO} from "../word_list/WordVO";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component ({
   selector: 'edit-word',
@@ -7,13 +10,42 @@ import {Component} from "@angular/core";
 
 export class EditWordComponent {
   update:boolean;
-  
-  
-  onSave() {
-    
+  first:string;
+  second:string;
+  optional:string;
+  keyId:string;
+
+  ngOnInit() {
+    this.keyId = this.route.snapshot.params['id'];
   }
-  
+
+  constructor(
+    private dataServices:DataServices,
+    private router:Router,
+    private route:ActivatedRoute
+  ) {}
+
+  onSave() {
+
+    var wordVO:WordVO = new WordVO();
+    wordVO.first = this.first;
+    wordVO.second = this.second;
+    wordVO.optional = this.optional;
+
+    console.log(wordVO);
+    console.log(wordVO);
+
+    if (wordVO.first != '' && wordVO.second != '') {
+      this.dataServices.saveWord(this.keyId, wordVO)
+        .then(_ => {
+          this.router.navigate(['#/wordlist']);
+          console.log('save success');
+          // show toast
+        });
+    }
+  }
+
   onUpdate() {
-    
+
   }
 }

@@ -45,20 +45,21 @@ export class DataServices {
 
   deleteCategory(key:string) {
     const items = this.afire.database.list('users/' + this.uid + '/categories/' + key);
-    console.log('users/' + this.uid + '/categories' + key);
     items.remove();
   }
 
 //*********************************************** Words Operation ******************************************************
   getWords(categoryKey:string) {
-    return this.afire.database.list('users/' + this.uid + '/words')
+    return this.afire.database.list('users/' + this.uid + '/categories/' + categoryKey +'/words/')
       .map((arr) => {
         return arr
       }) as FirebaseListObservable<any>;
   }
 
   saveWord(categoryKey:string, word:WordVO) {
-
+    const item = this.afire.database.list('users/' + this.uid + '/categories/' + categoryKey +'/words');
+    return item.push(word)
+      .catch(err => console.log(err, 'You do not have access!'));
   }
 
   editWord(word:WordVO) {

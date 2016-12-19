@@ -1,7 +1,6 @@
 import {Component} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
 import {DataServices} from "../../../DataService";
-import {CategoryVO} from "../categories/CategoryVO";
 
 @Component({
   selector: 'edit-component',
@@ -15,10 +14,11 @@ export class EditCategoryComponent {
   keyId:string;
 
 
-  constructor(private route:ActivatedRoute,
-              private router:Router,
-              public dataServices:DataServices) {
-  }
+  constructor(
+    private route:ActivatedRoute,
+    private router:Router,
+    public dataServices:DataServices
+  ) {}
 
   ngOnInit() {
 
@@ -32,11 +32,10 @@ export class EditCategoryComponent {
     }
 
     this.dataServices.getCategory(this.keyId).subscribe(
-        categories => {
+      categories => {
         this.category = categories.categoryName;
       }
     );
-
 
   }
 

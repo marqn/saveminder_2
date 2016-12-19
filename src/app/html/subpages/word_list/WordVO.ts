@@ -5,7 +5,7 @@ export class WordVO
   elapsedTime:number;
   first:string;
   second:string;
-  third_optional:string;
+  optional:string;
   lost:number;
   refresh:number;
   win:number;
