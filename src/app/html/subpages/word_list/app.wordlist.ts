@@ -24,7 +24,7 @@ export class Wordlist {
 
     this.dataServices.getWords(this.keyId).subscribe(
       words => {
-        this.words = words;
+        this.words = words.reverse();
       }
     );
   }

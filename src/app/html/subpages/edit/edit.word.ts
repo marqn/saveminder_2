@@ -31,14 +31,17 @@ export class EditWordComponent {
     wordVO.first = this.first;
     wordVO.second = this.second;
     wordVO.optional = this.optional;
+    wordVO.data_added = Date.now();
+    wordVO.refresh = 0;
+    wordVO.win = 0;
+    wordVO.lost = 0;
+    wordVO.elapsedTime = 0;
 
-    console.log(wordVO);
-    console.log(wordVO);
 
     if (wordVO.first != '' && wordVO.second != '') {
       this.dataServices.saveWord(this.keyId, wordVO)
         .then(_ => {
-          this.router.navigate(['#/wordlist']);
+          this.router.navigate(['#/wordlist', {id: this.keyId}]);
           console.log('save success');
           // show toast
         });
