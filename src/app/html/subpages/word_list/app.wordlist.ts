@@ -1,7 +1,9 @@
 import {Component} from "@angular/core";
 import {DataServices} from "../../../DataService";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 import {WordVO} from "./WordVO";
+
+declare var Materialize:any;
 
 @Component({
   selector: 'wordlist',
@@ -30,8 +32,12 @@ export class Wordlist {
   }
 
   clicked(event) {
-    console.log(event.srcElement.firstChild);
-    event.preventDefault();
+
+
+    // Materialize.modalActions.subscribe().emit({action:"modal1",params:['open']});
+
+
+    console.log(event);
   }
 
 }

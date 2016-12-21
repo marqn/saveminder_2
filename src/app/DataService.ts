@@ -57,13 +57,20 @@ export class DataServices {
   }
 
   saveWord(categoryKey:string, word:WordVO) {
+    console.log(word);
     const item = this.afire.database.list('users/' + this.uid + '/categories/' + categoryKey +'/words');
     return item.push(word)
       .catch(err => console.log(err, 'You do not have access!'));
   }
 
-  editWord(word:WordVO) {
+  deleteWord(categoryKey:string, wordKey:string) {
+    const items = this.afire.database.list('users/' + this.uid + '/categories/' + categoryKey + '/words/' + wordKey);
+    items.remove();
+  }
 
+  editWord(categoryKey:string, wordKey:string, word:WordVO) {
+    const itemObservable = this.afire.database.object('users/' + this.uid + '/categories/' + categoryKey + '/words/' + wordKey);
+    return itemObservable.update({ first: word.first, second: word.second, oprional: word.optional });
   }
 
 }

@@ -31,6 +31,9 @@ export class EditWordComponent {
     wordVO.first = this.first;
     wordVO.second = this.second;
     wordVO.optional = this.optional;
+    if(wordVO.optional == undefined) {
+      wordVO.optional = '';
+    }
     wordVO.data_added = Date.now();
     wordVO.refresh = 0;
     wordVO.win = 0;

@@ -2,6 +2,8 @@ import {Component} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
 import {DataServices} from "../../../DataService";
 
+declare var Materialize:any;
+
 @Component({
   selector: 'edit-component',
   templateUrl: './edit.category.html'
@@ -12,6 +14,10 @@ export class EditCategoryComponent {
   update:boolean;
   category:string;
   keyId:string;
+
+  saveToastMessage:string = "Add new category";
+  updateToastMessage:string = "Update category: ";
+  toastDelay:number = 4000;
 
 
   constructor(
@@ -45,7 +51,7 @@ export class EditCategoryComponent {
         .then(_ => {
           this.category = '';
           this.router.navigate(['#/category-list']);
-          // show toast
+          Materialize.toast(this.saveToastMessage, this.toastDelay);
         });
     }
   }
@@ -55,7 +61,7 @@ export class EditCategoryComponent {
       this.dataServices.updateCategory(this.keyId, this.category)
         .then(_ => {
           this.router.navigate(['#/category-list']);
-          // show toast
+          Materialize.toast(this.updateToastMessage + this.category, this.toastDelay);
         });
     }
   }

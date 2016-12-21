@@ -3,6 +3,8 @@ import {DataServices} from "./../../../DataService";
 import {CategoryVO} from "./CategoryVO";
 import { Router } from '@angular/router';
 
+declare var Materialize:any;
+
 @Component({
   selector: 'app-categories',
   templateUrl: './categorylist.html'
@@ -27,6 +29,7 @@ export class CategoryListComponent {
 
   onDelete(categoryObj) {
     this.dataServices.deleteCategory(categoryObj.$key);
+    Materialize.toast('Delete category: ' + categoryObj.categoryName, 4000);
   }
 
 }

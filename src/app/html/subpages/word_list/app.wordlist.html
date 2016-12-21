@@ -47,6 +47,13 @@
               <br>
               <span (click)="clicked($event)">{{word.second | lowercase }}</span>
             </div>
+
+            <!--<div class="col s6">
+              <input [(ngModel)]="first" id="first" type="text" class="validate">
+              <br>
+              <input [(ngModel)]="second" id="second" type="text" class="validate">
+            </div>-->
+
             <div class="col s3">
               Remember time:{{word.elapsedTime / word.refresh | number:'2.1'}}<br>
               Elapsed time:{{word.elapsedTime | date:'mm:ss:sss'}}
