@@ -5,9 +5,9 @@ import {ActivatedRoute, Router} from "@angular/router";
 
 declare var Materialize:any;
 
-@Component ({
+@Component({
   selector: 'edit-word',
-    templateUrl: './edit.word.html'
+  templateUrl: './edit.word.html'
 })
 
 export class EditWordComponent {
@@ -39,11 +39,10 @@ export class EditWordComponent {
 
   }
 
-  constructor(
-    private dataServices:DataServices,
-    private router:Router,
-    private route:ActivatedRoute
-  ) {}
+  constructor(private dataServices:DataServices,
+              private router:Router,
+              private route:ActivatedRoute) {
+  }
 
   onSave() {
 
@@ -51,17 +50,16 @@ export class EditWordComponent {
     wordVO.first = this.first;
     wordVO.second = this.second;
     wordVO.optional = this.optional;
-    if(wordVO.optional == undefined) {
+    if (wordVO.optional == undefined) {
       wordVO.optional = '';
     }
 
-    if(!this.update) {
-      wordVO.data_added = Date.now();
-      wordVO.refresh = 0;
-      wordVO.win = 0;
-      wordVO.lost = 0;
-      wordVO.elapsedTime = 0;
-    }
+
+    wordVO.data_added = Date.now();
+    wordVO.refresh = 0;
+    wordVO.win = 0;
+    wordVO.lost = 0;
+    wordVO.elapsedTime = 0;
 
 
     if (wordVO.first != '' && wordVO.second != '') {
@@ -72,4 +70,24 @@ export class EditWordComponent {
         });
     }
   }
+
+  onUpdate() {
+    var wordVO:WordVO = new WordVO();
+    wordVO.first = this.first;
+    wordVO.second = this.second;
+    wordVO.optional = this.optional;
+    if (wordVO.optional == undefined) {
+      wordVO.optional = '';
+    }
+
+    if (wordVO.first != '' && wordVO.second != '') {
+      this.dataServices.updateWord(this.categoryKey, this.wordKey, wordVO)
+        .then(_ => {
+          this.router.navigate(['#/wordlist', {id: this.categoryKey}]);
+          Materialize.toast('Word saved', 4000);
+        });
+    }
+
+  }
+
 }

@@ -33,6 +33,11 @@
 <div class="row center-align">
   <div class="col s12">
     <a class="waves-effect waves-light btn" [routerLink]="['../wordlist', {id:categoryKey}]">Back</a>
-    <a class="waves-effect waves-light btn" (click)="onSave()">Save</a>
+    <span [hidden]="update">
+      <a class="waves-effect waves-light btn" (click)="onSave()">Save</a>
+    </span>
+    <span [hidden]="!update">
+      <a class="waves-effect waves-light btn" (click)="onUpdate()">Update</a>
+    </span>
   </div>
 </div>
