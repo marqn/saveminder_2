@@ -6,9 +6,9 @@ import {RouterModule} from "@angular/router";
 import {MaterializeModule} from "angular2-materialize";
 import {AngularFireModule, AuthProviders, AuthMethods} from 'angularfire2';
 
-import {AppMain} from "./html/app.main.ts";
+import {AppMain} from "./html/main.ts";
 import {AppNavigation} from "./html/navigation/navigation.ts";
-import {AppContainer} from "./html/app.container.ts";
+import {AppContainer} from "./html/container.ts";
 import {AppFooter} from "./html/footer/footer.ts";
 import {AppLearn} from "./html/subpages/learn/learn.ts";
 import {CategoryListComponent} from "./html/subpages/category_list/categorylist.ts";

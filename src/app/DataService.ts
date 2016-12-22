@@ -55,7 +55,7 @@ export class DataServices {
         return arr
       }) as FirebaseListObservable<any>;
   }
-  
+
   getWord(categoryKey:string, wordKey:string) {
     return this.afire.database.object('users/' + this.uid + '/categories/' + categoryKey + '/words/' + wordKey);
   }
@@ -72,9 +72,9 @@ export class DataServices {
     items.remove();
   }
 
-  editWord(categoryKey:string, wordKey:string, word:WordVO) {
+  updateWord(categoryKey:string, wordKey:string, word:WordVO) {
     const itemObservable = this.afire.database.object('users/' + this.uid + '/categories/' + categoryKey + '/words/' + wordKey);
-    return itemObservable.update({ first: word.first, second: word.second, oprional: word.optional });
+    return itemObservable.update({ first: word.first, second: word.second, optional: word.optional });
   }
 
 }
