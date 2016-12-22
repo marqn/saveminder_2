@@ -20,6 +20,8 @@
     "@angular/platform-browser": "~2.1.0",
     "@angular/platform-browser-dynamic": "~2.1.0",
     "@angular/router": "~3.1.0",
+    "@types/angular": "^1.5.22",
+    "@types/jquery": "^2.0.34",
     "angular2-materialize": "^5.2.1",
     "angularfire2": "^2.0.0-beta.6",
     "core-js": "^2.4.1",
@@ -32,6 +34,7 @@
   },
   "devDependencies": {
     "@types/jasmine": "^2.2.30",
+    "@types/jquery": "^2.0.34",
     "@types/node": "^6.0.42",
     "angular-cli": "1.0.0-beta.19-3",
     "codelyzer": "1.0.0-beta.1",

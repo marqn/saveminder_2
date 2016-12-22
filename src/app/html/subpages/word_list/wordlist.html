@@ -1,7 +1,8 @@
 <div class="row section">
   <div class="col s3">
     <span>
-      <a class="btn" [routerLink]="['../editword', {id : keyId}]">Add new word
+      <a class="btn" [routerLink]="['../editword', {id : keyId}]">
+        Add new word
         <i class="material-icons right">library_add</i>
       </a>
     </span>
@@ -12,7 +13,7 @@
     <h5>Sort by:</h5>
     <!-- Dropdown Trigger -->
     <a materialize="dropdown" class='dropdown-button btn' data-activates='dropdown2'>
-      Category
+      Sort by
       <i class="material-icons right">arrow_drop_down</i>
     </a>
     <a class="btn">
@@ -28,31 +29,27 @@
     </ul>
   </div>
 
-  <div class="col s3 right-align">
+  <!--<div class="col s3 right-align">
     <a class="btn" (click)="clicked($event)">Edit mode
       <i class="material-icons right">mode_edit</i>
     </a>
-  </div>
+  </div>-->
 
 </div>
 
 <div class="row">
   <div class="col s12">
-    <ul>
+    <ul materialize="collapsible" class="collapsible" data-collapsible="accordion">
       <li *ngFor="let word of words" class="hoverable">
         <div class="collapsible-header">
           <div class="row center-align">
             <div class="col s6">
-              <span (click)="clicked($event)">{{word.first | lowercase}}</span>
+              <span>{{word.first | lowercase}}</span>
               <br>
-              <span (click)="clicked($event)">{{word.second | lowercase }}</span>
+              <span>{{word.second | lowercase }}</span>
+              <br *ngIf="word.optional != ''">
+              <span *ngIf="word.optional != ''">{{word.optional | lowercase }}</span>
             </div>
-
-            <!--<div class="col s6">
-              <input [(ngModel)]="first" id="first" type="text" class="validate">
-              <br>
-              <input [(ngModel)]="second" id="second" type="text" class="validate">
-            </div>-->
 
             <div class="col s3">
               Remember time:{{word.elapsedTime / word.refresh | number:'2.1'}}<br>
@@ -63,7 +60,13 @@
               Refresh:{{word.refresh}}
             </div>
           </div>
+        </div>
 
+        <div class="collapsible-body center-align">
+          <p>
+            <a class="waves-effect waves-light green btn" [routerLink]="['../editword', {mode : 'update', categoryId:keyId ,wordId:word.$key }]">Edit</a>
+            <a class="waves-effect waves-light red btn" (click)="onDelete(word)">Delete</a>
+          </p>
         </div>
       </li>
     </ul>

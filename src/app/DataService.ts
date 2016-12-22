@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {AngularFire, FirebaseListObservable} from "angularfire2";
 import "rxjs/add/operator/map";
-import {CategoryVO} from "./html/subpages/categories/CategoryVO";
+import {CategoryVO} from "./html/subpages/category_list/CategoryVO";
 import {WordVO} from "./html/subpages/word_list/WordVO";
 
 @Injectable()
@@ -54,6 +54,10 @@ export class DataServices {
       .map((arr) => {
         return arr
       }) as FirebaseListObservable<any>;
+  }
+  
+  getWord(categoryKey:string, wordKey:string) {
+    return this.afire.database.object('users/' + this.uid + '/categories/' + categoryKey + '/words/' + wordKey);
   }
 
   saveWord(categoryKey:string, word:WordVO) {

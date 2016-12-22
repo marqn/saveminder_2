@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
-import {DataServices} from "../../../DataService";
+import {DataServices} from "../../../dataService";
 
 declare var Materialize:any;
 

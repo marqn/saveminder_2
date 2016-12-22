@@ -7,18 +7,18 @@ import {MaterializeModule} from "angular2-materialize";
 import {AngularFireModule, AuthProviders, AuthMethods} from 'angularfire2';
 
 import {AppMain} from "./html/app.main.ts";
-import {AppNavigation} from "./html/navigation/app.navigation.ts";
+import {AppNavigation} from "./html/navigation/navigation.ts";
 import {AppContainer} from "./html/app.container.ts";
-import {AppFooter} from "./html/footer/app.footer.ts";
-import {AppLearn} from "./html/subpages/learn/app.learn.ts";
-import {CategoryListComponent} from "./html/subpages/categories/categorylist.ts";
-import {AppGame} from "./html/subpages/game/app.game.ts";
-import {Wordlist} from "./html/subpages/word_list/app.wordlist.ts";
+import {AppFooter} from "./html/footer/footer.ts";
+import {AppLearn} from "./html/subpages/learn/learn.ts";
+import {CategoryListComponent} from "./html/subpages/category_list/categorylist.ts";
+import {AppGame} from "./html/subpages/game/game.ts";
+import {Wordlist} from "./html/subpages/word_list/wordlist.ts";
 import {EditCategoryComponent} from "./html/subpages/edit/edit.category.ts";
-import {Startpage} from "./html/subpages/start/app.startpage.ts";
-import {Loginpage} from "./html/subpages/login/app.loginpage.ts";
-import {Signup} from "./html/subpages/login/app.signup";
-import {DataServices} from "./DataService";
+import {Startpage} from "./html/subpages/start/startpage.ts";
+import {Loginpage} from "./html/subpages/login/loginpage.ts";
+import {Signup} from "./html/subpages/login/signup.ts";
+import {DataServices} from "./dataService";
 import {EditWordComponent} from "./html/subpages/edit/edit.word";
 
 const appRoutes = [

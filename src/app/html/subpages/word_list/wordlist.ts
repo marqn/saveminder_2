@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {DataServices} from "../../../DataService";
+import {DataServices} from "../../../dataService";
 import {ActivatedRoute} from "@angular/router";
 import {WordVO} from "./WordVO";
 
@@ -7,7 +7,7 @@ declare var Materialize:any;
 
 @Component({
   selector: 'wordlist',
-  templateUrl: './app.wordlist.html'
+  templateUrl: './wordlist.html'
 })
 
 export class Wordlist {
@@ -31,13 +31,13 @@ export class Wordlist {
     );
   }
 
-  clicked(event) {
+  onEdit(word) {
+    console.log(word);
+  }
 
-
-    // Materialize.modalActions.subscribe().emit({action:"modal1",params:['open']});
-
-
-    console.log(event);
+  onDelete(word) {
+    this.dataServices.deleteWord(this.keyId, word.$key);
+    Materialize.toast('Delete word: ' + word.first + ' / ' + word.second, 4000);
   }
 
 }

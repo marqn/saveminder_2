@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {DataServices} from "./../../../DataService";
+import {DataServices} from "./../../../dataService";
 import {CategoryVO} from "./CategoryVO";
 import { Router } from '@angular/router';
 

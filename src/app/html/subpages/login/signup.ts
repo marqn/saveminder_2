@@ -3,7 +3,7 @@ import {AngularFire} from "angularfire2/angularfire2";
 
 @Component({
   selector: 'signup',
-  templateUrl: './app.signup.html'
+  templateUrl: './signup.html'
 })
 
 export class Signup {

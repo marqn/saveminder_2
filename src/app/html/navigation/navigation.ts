@@ -5,7 +5,7 @@ import {FirebaseAuthState} from "angularfire2/index";
 
 @Component({
   selector: 'app-navigation',
-  templateUrl: './app.navigation.html'
+  templateUrl: './navigation.html'
 })
 
 export class AppNavigation {

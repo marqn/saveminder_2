@@ -3,7 +3,7 @@ import {AngularFire, AuthProviders, AuthMethods } from "angularfire2";
 
 @Component({
   selector: 'loginpage',
-  templateUrl: './app.loginpage.html'
+  templateUrl: './loginpage.html'
 })
 
 export class Loginpage {

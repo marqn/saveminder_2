@@ -1,4 +1,4 @@
-import {CategoryVO} from "./subpages/categories/CategoryVO";
+import {CategoryVO} from "./subpages/category_list/CategoryVO";
 
 export const CATEGORIES:CategoryVO[] = [
   {
