@@ -1,9 +1,9 @@
 <div class="row section">
   <div class="col s3">
     <span>
-      <a class="btn" [routerLink]="['../editword', {categoryId : keyId}]">
-        Add new word
-        <i class="material-icons right">library_add</i>
+      <a class="btn" [routerLink]="['../category-list']">
+        Back
+        <i class="material-icons right">replay</i>
       </a>
     </span>
   </div>
@@ -29,11 +29,14 @@
     </ul>
   </div>
 
-  <!--<div class="col s3 right-align">
-    <a class="btn" (click)="clicked($event)">Edit mode
-      <i class="material-icons right">mode_edit</i>
-    </a>
-  </div>-->
+  <div class="col s3 right-align">
+    <span>
+      <a class="btn" [routerLink]="['../editword', {categoryId : keyId}]">
+        Add new word
+        <i class="material-icons right">library_add</i>
+      </a>
+    </span>
+  </div>
 
 </div>
 
