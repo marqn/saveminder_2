@@ -1,0 +1,5 @@
+1. dodac historie gier
+2. dodac punkty
+3. strona główna:
+    - 3 najbardziej problematyczne słówka
+    - ostatnie logowanie - ile dni temu
