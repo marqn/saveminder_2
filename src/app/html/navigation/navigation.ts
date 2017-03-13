@@ -39,7 +39,6 @@ export class AppNavigation {
   }
 
   ngOnInit() {
-    console.log('init!!!!');
   }
 
 
